@@ -35,7 +35,7 @@ angular.module('app', ['ionic'])
     $scope.logs = logger.getLogs();
 })
 
-.run(function($ionicPlatform, logger) {
+.run(function($ionicPlatform, $rootScope, logger) {
     
     logger.log('Angular run() called.');
     
@@ -56,5 +56,6 @@ angular.module('app', ['ionic'])
         if(window.StatusBar) {
             StatusBar.styleDefault();
         }
+        $rootScope.$apply();
     });
 });
